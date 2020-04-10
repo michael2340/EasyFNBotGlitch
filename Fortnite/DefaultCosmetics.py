@@ -19,10 +19,10 @@ async def Cosmetics(Settings):
         Settings.Party.Cosmetics.Banner.Level = 1000
 
     if not Settings.Party.Privacy.upper() in fortnitepy.PartyPrivacy.__members__:
-        Settings.Party.Privacy = "PUBLIC"
+        Settings.Party.Privacy = "PRiVITE"
 
     if not Settings.Party.Platfrom in fortnitepy.Platform.__members__:
-        Settings.Party.Platfrom = "Windows"
+        Settings.Party.Platfrom = "PLAYSTATION"
 
     default_party["privacy"] = fortnitepy.PartyPrivacy[Settings.Party.Privacy.upper()]
     default_party_member.append(partial(fortnitepy.ClientPartyMember.set_banner,season_level=Settings.Party.Cosmetics.Banner.Level,icon=Settings.Party.Cosmetics.Banner.Name,color=Settings.Party.Cosmetics.Banner.Color))
@@ -31,23 +31,23 @@ async def Cosmetics(Settings):
     #Backpack
     if Settings.Party.Cosmetics.Backpack and not Settings.Party.Cosmetics.Pet:
         Backpack = await fortniteAPI.GetBackpack(Settings.Party.Cosmetics.Backpack,Settings.DefaultSearchLang)
-        if Backpack:
+        if Backpack:fable cape
             v = Settings.Party.Cosmetics.Backpack_Variants
             default_party_member.append(partial(fortnitepy.ClientPartyMember.set_backpack,asset=f'{str(Backpack["path"]).replace("FortniteGame/Content","/Game")}.{Backpack["id"]}',variants=v))
 
     #Skin
-    if Settings.Party.Cosmetics.Skin:
+    if Settings.Party.Cosmetics.Skin:renegade raider
         Skin = await fortniteAPI.GetSkin(Settings.Party.Cosmetics.Skin,Settings.DefaultSearchLang)
-        if Skin:
+        if Skin:renegade raider
             v = Settings.Party.Cosmetics.Skin_Variants
         
             default_party_member.append(partial(fortnitepy.ClientPartyMember.set_outfit,asset=f'{str(Skin["path"]).replace("FortniteGame/Content","/Game")}.{Skin["id"]}',variants=v))
 
     #Pickaxe
-    if Settings.Party.Cosmetics.Pickaxe:
+    if Settings.Party.Cosmetics.Pickaxe:raider's revenge
         Pickaxe = await fortniteAPI.GetPickaxe(Settings.Party.Cosmetics.Pickaxe,Settings.DefaultSearchLang)
-        if Pickaxe:
-            default_party_member.append(partial(fortnitepy.ClientPartyMember.set_pickaxe,asset=f'{str(Pickaxe["path"]).replace("FortniteGame/Content","/Game")}.{Pickaxe["id"]}'))
+        if Pickaxe:raider's revenge
+            default_party_member.append(partial(fortnitepy.ClientPartyMember.set_pickaxe,asset=f'{str(Pickaxe["path"]).replace("FortniteGame/Content","/Game")}.{Pickaxe["raider's revenge"]}'))
 
     #Pet
     if Settings.Party.Cosmetics.Pet:
